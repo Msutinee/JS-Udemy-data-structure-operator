@@ -30,42 +30,90 @@ const restaurant = {
     console.log(`Your order recieved! ${this.starterMenu[indexStarter]} and ${this.mainMenu[indexMain]} will be deliverd
       to ${address} at ${time}`);
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
 };
+
+// Spread Operator
+// realworld example
+const ingredients = [
+  // prompt("Let's make pasta!'Ingrediant 1 ?"),
+  // prompt('Ingrediant 2?'),
+  // prompt('Ingrediant 3?'),
+];
+
+console.log(ingredients);
+
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+restaurant.orderPasta(...ingredients);
+
+const arr = [7, 8, 9];
+const newArr = [1, 2, 3, ...arr];
+console.log(newArr);
+
+//Objects
+
+const newRestuarant = { foundedIn: 1993, ...restaurant, founder: 'Jimmy' };
+console.log(newRestuarant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'MimiMai';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+
+//copy array
+
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+//join 2 array
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+const myName = 'Mai';
+console.log(...myName);
+// Destructured Obj
+
 // console.log(this.name); // error
 // console.log(restaurant.starterMenu);
 
-restaurant.orderDelivery({
-  time: '22:00',
-  address: 'chinatown',
-  indexMain: 2,
-  indexStarter: 2,
-});
+// restaurant.orderDelivery({
+//   time: '22:00',
+//   address: 'chinatown',
+//   indexMain: 2,
+//   indexStarter: 2,
+// });
 
-const {
-  fri: { open: o, close: c },
-} = restaurant.openingHours;
-console.log(o, c);
+// const {
+//   fri: { open: o, close: c },
+// } = restaurant.openingHours;
+// console.log(o, c);
 
-// const { fri } = openingHours;
-// console.log(fri);
+// // const { fri } = openingHours;
+// // console.log(fri);
 
-const { name, openingHours, categories } = restaurant;
-console.log(name, openingHours, categories);
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
-console.log(restaurantName, hours, tags);
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
+// const {
+//   name: restaurantName,
+//   openingHours: hours,
+//   categories: tags,
+// } = restaurant;
+// console.log(restaurantName, hours, tags);
 
-const { menu = [], starterMenu: starter = [] } = restaurant;
-console.log(menu, starter);
+// const { menu = [], starterMenu: starter = [] } = restaurant;
+// console.log(menu, starter);
 
-let a = 111;
-let b = 999;
-const obj = { a: 23, b: 24, c: 25 };
-({ a, b } = obj);
-console.log(a, b);
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 24, c: 25 };
+// ({ a, b } = obj);
+// console.log(a, b);
+
+//Destructured Array
 
 // const [starter, mainCourse] = restaurant.order(2, 0);
 // console.log(starter, mainCourse);
