@@ -35,47 +35,67 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
+
+  orderPizza: function (mainIngrediant, ...otherIngredients) {
+    console.log(mainIngrediant);
+    console.log(otherIngredients);
+  },
 };
 
-// Spread Operator
-// realworld example
-const ingredients = [
-  // prompt("Let's make pasta!'Ingrediant 1 ?"),
-  // prompt('Ingrediant 2?'),
-  // prompt('Ingrediant 3?'),
-];
+//Rest pattern and Parameters &&&&&&&&&&&&&&&&&&&
+restaurant.orderPizza('mrushroom', 'egg', 'basil', 'cheese');
 
-console.log(ingredients);
+const add = function (...number) {
+  let result = 0;
+  for (let i = 0; i < number.length; i++) {
+    result += number[i];
+  }
+  return result;
+};
+console.log(add(2, 3));
+console.log(add(5, 3, 7, 2));
+console.log(add(8, 2, 5, 3, 2, 1, 4));
 
-restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
-restaurant.orderPasta(...ingredients);
+// // Spread Operator &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// // realworld example
+// const ingredients = [
+//   // prompt("Let's make pasta!'Ingrediant 1 ?"),
+//   // prompt('Ingrediant 2?'),
+//   // prompt('Ingrediant 3?'),
+// ];
 
-const arr = [7, 8, 9];
-const newArr = [1, 2, 3, ...arr];
-console.log(newArr);
+// console.log(ingredients);
 
-//Objects
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+// restaurant.orderPasta(...ingredients);
 
-const newRestuarant = { foundedIn: 1993, ...restaurant, founder: 'Jimmy' };
-console.log(newRestuarant);
+// const arr = [7, 8, 9];
+// const newArr = [1, 2, 3, ...arr];
+// console.log(newArr);
 
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = 'MimiMai';
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+// //Objects
 
-//copy array
+// const newRestuarant = { foundedIn: 1993, ...restaurant, founder: 'Jimmy' };
+// console.log(newRestuarant);
 
-const mainMenuCopy = [...restaurant.mainMenu];
-console.log(mainMenuCopy);
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'MimiMai';
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
 
-//join 2 array
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
+// //copy array
 
-const myName = 'Mai';
-console.log(...myName);
-// Destructured Obj
+// const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy);
+
+// //join 2 array
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
+
+// const myName = 'Mai';
+// console.log(...myName);
+
+// Destructured Obj &&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 // console.log(this.name); // error
 // console.log(restaurant.starterMenu);
@@ -113,7 +133,7 @@ console.log(...myName);
 // ({ a, b } = obj);
 // console.log(a, b);
 
-//Destructured Array
+//Destructured Array&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 // const [starter, mainCourse] = restaurant.order(2, 0);
 // console.log(starter, mainCourse);
